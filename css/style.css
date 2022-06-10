@@ -2,6 +2,7 @@
 
 body{
     font-family: 'JetBrains Mono', monospace;
+    background: #666666;
     margin: 0px;
 }
 
@@ -14,6 +15,7 @@ nav ul{
 }
 li{
     float: right;
+    border-left: #333333;
 }
 li a{
     display: block;
@@ -50,5 +52,8 @@ aside h1{
 }
 
 main{
-    min-width: 80%;
+
+}
+.startScreen{
+    text-align: center;
 }
