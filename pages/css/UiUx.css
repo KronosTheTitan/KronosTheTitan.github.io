@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(../RobotoSlab-VariableFont_wght.ttf);
+}
+
+body {
+    background-color: #f5f5f5;
+    margin: 0px;
+    font-family: Arial;
+}
+
+.main {
+    margin-left: 20%;
+    margin-right: 20%;
+
+    margin-top: 5%;
+
+    padding: 2%;
+
+    background-color: #ffffff;
+}
+
+.\.intro{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+
+    height: 64px;
+
+    background-color: #ffffff;
+
+    font-size: 16.5px;
+}
+
+nav ul li {
+    float: right;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.highlight{
+    padding: 22.5px;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li a img {
+    height: 36px;
+    width: 36px;
+}
+
+.highlight:hover {
+    background-color: #f7a51b;
+}
+
+h1{
+    color: #993300;
+}
+
+.\.bottom{
+    background-color: #222222;
+    text-align: center;
+    color: white;
+
+    margin-top: 5%;
+
+    width: 96%;
+
+    padding: 2%;
+}
+
+.homeBtn{
+    float: left;
+    padding: 8px;
+}
+.homeBtn a img{
+    height: 48px;
+    width: auto;
+}
+
+.bottomImage{
+    text-align: center;
+    background-color: #a02a34;
+    padding: .5%;
+    max-width: 60%;
+    height: auto;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.gallery ul li{
+    float: left;
+    padding-left: 8px;
+}
+
+.imgButton{
+    padding: 12px;
+}
