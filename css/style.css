@@ -1,15 +1,130 @@
-aside{
-    width: 21%;
-    padding: 2%;
-
-    background-color: black;
-    color: white;
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("font/ttf/JetBrainsMonoNL-Regular.ttf") format("truetype");
 }
 
-aside h1{
-    align-content: center;
+body{
+    background: grey;
+    color: white;
+    font-size: 16pt;
+    font-family: JetBrains Mono, serif;
+}
+
+section{
+    width: 46%;
+    height: 100%;
+    padding: 2%;
+    border-radius: 2%;
+
+    margin-right: 30%;
+    margin-left: 10%;
+
+    background-color: black;
+}
+
+aside{
+    width: 16%;
+    padding: 2%;
+
+    margin-right: 5%;
+
+    background-color: black;
+    float: right;
+
+    border-radius: 2%;
+}
+
+.TechStack{
+    display: flex;
+    flex-wrap: wrap;
+
+    height: fit-content;
+}
+
+.TechStack li{
+    width: 50%;
+    height: auto;
+}
+
+.TechStack li img {
+    height: auto;
+    width: 80%;
+    padding: 10%;
+}
+
+h1{
+    text-align: center;
 }
 
 aside picture img{
-    width: available;
+    display: block;
+    width: 80%;
+    padding: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul{
+    list-style-type: none;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 80px;
+}
+
+ul li img{
+    width: auto;
+    height: 100%;
+}
+
+.Turtle {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Turtle h1{
+    width: 100%;
+    flex: none;
+}
+
+.Turtle .left{
+    width: 49%;
+    padding-right: 1%;
+}
+.Turtle .right{
+    width: 49%;
+    padding-left: 1%;
+}
+
+.Turtle .right iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.Plush {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Plush h1{
+    width: 100%;
+    flex: none;
+}
+
+.Plush .left{
+    width: 49%;
+    padding-right: 1%;
+}
+.Plush .right{
+    width: 49%;
+    padding-left: 1%;
+}
+
+.Plush .right iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
 }
