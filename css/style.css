@@ -33,11 +33,13 @@ aside{
     display: flex;
     flex-wrap: wrap;
 
+    justify-content: center;
+
     height: fit-content;
 }
 
 .TechStack li{
-    width: 50%;
+    width: 33%;
     height: auto;
 }
 
@@ -45,6 +47,7 @@ aside{
     height: auto;
     width: 80%;
     padding: 10%;
+    margin: auto;
 }
 
 h1{
@@ -65,12 +68,11 @@ ul{
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
-    height: 80px;
 }
 
 ul li img{
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 
 .Turtle {
@@ -130,4 +132,23 @@ ul li img{
     margin-left: 10%;
     margin-right: 10%;
     height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+
+    font-size: 13pt;
+    border: none;
+
+    padding: 16px;
+    border-radius: 16px;
+
+    background-color: lightblue;
+    font-family: "JetBrains Mono";
+}
+
+a:hover{
+    background-color: white;
 }
