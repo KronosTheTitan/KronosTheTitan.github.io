@@ -21,25 +21,25 @@ const fragmentShaderText =
         '',
         'varying vec2 uvTransfer;',
         'varying vec3 pos;',
+        'uniform vec2 mouse;',
+        'uniform float mouseOnCanvas;',
         'void main()',
         '{',
-        '  gl_FragColor = vec4(uvTransfer,0, 1.0);',
+        '   float dist = length(uvTransfer - mouse);',
+        '   float inRange = step(dist,.1);',
+        '   vec2 color = mix(vec2(0),uvTransfer,inRange);',
+        '   gl_FragColor = vec4(color,0, 1.0);',
         '}'
     ].join('\n');
 
-const vertexShaderFile = 'JavaScript/shader.vs'
-const fragmentShaderFile = 'JavaScript/shader.fs'
-
-var gl;
-var vertexShader;
-var fragmentShader;
-var program;
-
-async function LoadShaderFile(filePath){
-    const file = await fetch(filePath);
-    //console.log(await file.text())
-    return await file.text();
-}
+let gl;
+let vertexShader;
+let fragmentShader;
+let program;
+let mouseLocation;
+let mouseOnCanvas;
+let lightX;
+let canvas;
 
 function CreateShaders(){
     vertexShader = gl.createShader(gl.VERTEX_SHADER);
@@ -76,7 +76,7 @@ function CreateShaders(){
 
 const InitDemo = function () {
 
-    let canvas = document.getElementById('game-surface');
+    canvas = document.getElementById('game-surface');
     gl = canvas.getContext('webgl');
 
     if (!gl) {
@@ -95,11 +95,11 @@ const InitDemo = function () {
 
     let triangleVertices =
         [ // X,   Y,    Z,      uvX, uvY
-            -0.5, 0.5,  0.0,    0.0, 1.0,
-            -0.5, -0.5, 0.0,    0.0, 0.0,
+            -1, 1,  0.0,    0.0, 1.0,
+            -1, -1, 0.0,    0.0, 0.0,
 
-            0.5, -0.5,  0.0,    1.0, 0.0,
-            0.5, 0.5,   0.0,    1.0, 1.0,
+            1, -1,  0.0,    1.0, 0.0,
+            1, 1,   0.0,    1.0, 1.0,
         ];
 
     let indices = [
@@ -139,9 +139,46 @@ const InitDemo = function () {
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
     gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
 
+    mouseLocation = gl.getUniformLocation(program,"mouse");
+    mouseOnCanvas = gl.getUniformLocation(program,"mouseOnCanvas");
+
+    lightX = -1;
+
     let primitiveType = gl.TRIANGLES;
     let offset = 0;
     let count = 6;
     let indexType = gl.UNSIGNED_SHORT;
     gl.drawElements(primitiveType,count, indexType, offset);
+
+    canvas.addEventListener("mousemove", function (evt){
+        let mousePos = getMousePos(canvas, evt);
+        gl.uniform2fv(mouseLocation,[mousePos.x / canvas.width,mousePos.y / canvas.height * -1 + 1])
+        console.log(mousePos.x +","+ mousePos.y);
+    })
+
+    canvas.addEventListener("mouseleave", function (){
+        gl.uniform1fv(mouseOnCanvas,[0])
+    })
+
+    canvas.addEventListener("mouseenter", function (){
+        gl.uniform1fv(mouseOnCanvas,[1])
+    })
+
+    let loop = function () {
+        gl.clearColor(0, 0, 0, 1.0);
+        gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
+
+        gl.drawElements(primitiveType,count, indexType, offset);
+
+        requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
 };
+
+function getMousePos(canvas, evt) {
+    let rect = canvas.getBoundingClientRect();
+    return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+    };
+}
