@@ -87,10 +87,12 @@ ul li img{
 .Turtle .left{
     width: 49%;
     padding-right: 1%;
+    min-height: 512px;
 }
 .Turtle .right{
     width: 49%;
     padding-left: 1%;
+    min-height: 512px;
 }
 
 .Turtle .right iframe{
@@ -100,7 +102,6 @@ ul li img{
 }
 
 .Plush {
-    height: fit-content;
     display: flex;
     flex-wrap: wrap;
 }
@@ -113,10 +114,12 @@ ul li img{
 .Plush .left{
     width: 49%;
     padding-right: 1%;
+    min-height: 512px;
 }
 .Plush .right{
     width: 49%;
     padding-left: 1%;
+    min-height: 512px;
 }
 
 .Plush .right iframe{
