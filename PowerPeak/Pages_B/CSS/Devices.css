@@ -1,0 +1,17 @@
+.deviceList {
+
+}
+
+.Columns {
+    background-color: lightgray;
+    border-radius: 16px;
+}
+
+.deviceList li {
+    display: flex;
+}
+
+.deviceList li p {
+    text-align: center;
+    flex: 1;
+}

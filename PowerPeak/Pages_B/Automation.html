@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PowerPeak</title>
+    <link rel="stylesheet" href="../Pages_B/CSS/Main.css">
+    <link rel="stylesheet" href="../Pages_B/CSS/Universal.css">
+    <link rel="stylesheet" href="../Pages_B/CSS/DropdownMenu.css">
+    <link rel="stylesheet" href="../Pages_B/CSS/Automation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script src="JavaScript/Automation.js"></script>
+</head>
+<body>
+<div class="Main">
+    <div class="SideBar">
+        <div class="logo">
+            <img src="../Icons/PowerPeakLogo.svg"><h1>PowerPeak</h1>
+        </div>
+        <ul>
+            <li><a href="Home.html"><img src="../Icons/HomeIcon.svg"><p>Home</p></a></li>
+            <li><a href="Device.html"><img src="../Icons/DevicesIcon.svg"><p>Devices</p></a></li>
+            <li><a href="Automation.html"><img src="../Icons/AutomationIcon.svg"><p>Automation</p></a></li>
+            <li><a href="Profile.html"><img src="../Icons/ProfileIcon.svg"><p>Profile</p></a></li>
+        </ul>
+    </div>
+    <div class="MainSection">
+        <h1>Automation Actions</h1><br>
+        <ul id="deviceList">
+            <li class="Columns">
+                <p>Name</p>
+                <p>Activation Time</p>
+                <p>Shutoff Time</p>
+                <p>Status</p>
+                <button onclick="createEntry()">
+                    <img src="../Icons/AddIcon.svg" alt="">
+                </button>
+            </li>
+            <li id="0">
+                <p>Heat Pump</p>
+                <p>06:00</p>
+                <p>22:00</p>
+                <p>On</p>
+                <button onclick="deleteEntry(0)">
+                    <img src="../Icons/DeleteIcon.svg" alt="">
+                </button>
+            </li>
+            <li id="1">
+                <p>Lights</p>
+                <p>19:00</p>
+                <p>22:00</p>
+                <p>Off</p>
+                <button onclick="deleteEntry(1)">
+                    <img src="../Icons/DeleteIcon.svg" alt="">
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

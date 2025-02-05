@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+}
+
+div {
+    flex: 1;
+}
+
+body div {
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: lightgray;
+}

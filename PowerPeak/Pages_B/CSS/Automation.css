@@ -1,0 +1,35 @@
+#deviceList {
+
+}
+
+.Columns {
+    background-color: lightgray;
+    border-radius: 16px;
+}
+
+#deviceList li {
+    display: flex;
+    padding: 16px;
+}
+
+#deviceList li p {
+    text-align: center;
+    flex: 4;
+}
+
+#deviceList li button {
+    flex: 1;
+
+    background-color: white;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 16px;
+}
+
+#deviceList li button:hover {
+    background-color: lightgray;
+}
+
+button img {
+}

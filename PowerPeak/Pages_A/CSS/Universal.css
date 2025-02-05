@@ -1,0 +1,79 @@
+
+
+body{
+    background-color: lightgrey;
+    font: 14px "Roboto", sans-serif;
+    font-size: 16pt;
+    margin: 0;
+}
+
+h1 {
+    font-size: 24pt;
+    margin: 0;
+}
+
+.TopBar {
+    background-color: white;
+    padding: 16px;
+    max-height: 20%;
+    display: flex;
+    width: 100%;
+}
+
+.TopBar img {
+    height: 100%;
+}
+
+.TopBar p {
+    float: right;
+    text-align: right;
+}
+
+.Main {
+    display: flex;
+    width: 100%;
+}
+
+.SideBar {
+    background-color: white;
+    padding: 16px;
+    margin: 16px 16px 16px 16px;
+    border-radius: 16px;
+    flex: 1;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li a{
+    display: flex;
+    border-radius: 16px;
+}
+
+ul li a:hover {
+    background-color: lightgrey;
+}
+
+li a p {
+    margin: 0;
+    height: 32px;
+    Margin: 8px 8px 8px 0;
+}
+
+li a img {
+    height: 32px;
+    margin: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo{
+    display: flex;
+    border-bottom: 2px solid lightgray;
+}

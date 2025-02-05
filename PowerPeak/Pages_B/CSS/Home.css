@@ -1,0 +1,11 @@
+button {
+    border-color: lightgray;
+    background-color: white;
+    border-radius: 16px;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+
+button:hover {
+    background-color: lightgray;
+}

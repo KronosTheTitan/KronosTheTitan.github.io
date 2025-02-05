@@ -1,0 +1,47 @@
+.MainSection{
+    display: flex;
+}
+
+.MainSection div{
+    flex: 1;
+}
+
+.ProfilePicture {
+    display: flex;
+    justify-content: center;
+}
+
+.ProfilePicture img {
+    border-radius: 40%;
+    max-width: 50%;
+    min-width: 50%;
+
+    margin: 32px;
+
+    background: lightgray;
+    flex: 1;
+}
+
+.Profile h1{
+    text-align: center;
+}
+
+.progressBar {
+    border-radius: 16px;
+    border: 1px solid lightgray;
+    height: 32px;
+}
+
+.progressBar div {
+    border-radius: 16px;
+    height: 100%;
+    width: 70%;
+    color: white;
+    text-align: center;
+    background: #4285f4;
+}
+
+.barLabels {
+    display: flex;
+    justify-content: space-between;
+}
